@@ -1,24 +1,20 @@
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    text-decoration: none;
-    outline: none;
 }
+
 
 html {
     font-size: 16px; 
 }
 
 body {
-    min-height: 100%;
-    overflow-x: hidden; 
+    height: 100%;
+    overflow-y: auto;
     background-color: #d09be8;
     font-family: Arial, sans-serif;
-    font-size: 1rem; 
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    font-size: 1rem;
 }
 
 .ays-container {
@@ -75,30 +71,30 @@ body {
 .center {
     display: flex;
     flex-wrap: wrap;
-    max-width: 80rem; 
+    max-width: 1280px;
     margin: 0 auto;
     padding: 0 2%;
 }
 
 .header {
-    padding: 3.125rem 2%; 
-    width: 100%;
+    height: auto;
+    padding: 2rem 2%;
     display: flex;
-    justify-content: space-between; 
     flex-wrap: wrap; 
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
+    display: flex;
+    flex-wrap: nowrap;
     width: 50%;
+    max-width: 250px;
 }
-
 .menu {
-    position: absolute;
-    padding-top: 1.875rem; 
-    width: 90%;
+    width: 55%;
+    padding-top: 1rem;
     text-align: right;
-    top: 0; 
-    right: 0; 
 }
 
 .menu a {
@@ -106,6 +102,21 @@ body {
     text-decoration: none;
     font-weight: bold;
     margin-right: 1rem; 
+    display: inline-block;
+}
+
+.menu a::after {
+    content: '';
+    background-color: #dc2626;
+    height: 3px;
+    width: 0%;
+    display: block;
+    margin: 0 auto; 
+    transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+    width: 100%; 
 }
 
 section, footer {
