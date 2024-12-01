@@ -1,101 +1,117 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.center{
- display: flex;
- flex-wrap: wrap;
- max-width: 1280px;   
- margin: 0 auto;
- padding: 0 2%;
+html {
+    font-size: 16px; 
 }
 
-.header{
-    height: 200px;
-    padding: 50px;
+body {
+    height: 100%;
+    overflow-y: auto;
+    background-color: #e2e8f0;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
 }
 
-.logo{
+.center {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2%;
+}
+
+.header {
+    height: auto;
+    padding: 2rem 2%;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
     display: flex;
     flex-wrap: nowrap;
     width: 50%;
+    max-width: 250px;
 }
 
-.menu{
-    padding-top: 30px;
+/* Menu */
+.menu {
     width: 50%;
+    padding-top: 1rem;
     text-align: right;
 }
 
-.menu a{
+.menu a {
     color: black;
     text-decoration: none;
     font-weight: bold;
     margin-right: 15px;
+    font-size: 1rem;
 }
 
-html,body{
-    height: 100%;
-    overflow-y: hidden;
-    background-color: #e2e8f0;
-}
 
-section.sobre{
-    height: 600px;
+section.sobre {
+    height: auto; 
+    padding: 4rem 2%;
     position: relative;
 }
 
-.extras{
-    border-radius: 100% 0% 0% 0%;
+.extras {
+    border-radius: 100% 0 0 0;
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 550px;
+    width: 450px;
     height: 480px;
     background-color: darkcyan;
 }
 
-.socialmidia{
+/* Redes sociais */
+.socialmidia {
     position: absolute;
-    right:20px;
+    right: 20px;
     top: 0;
 }
-.socialmidia img{
+
+.socialmidia img {
     display: block;
 }
 
-.txtsobre{
+
+.txtsobre {
     margin-top: 50px;
-}
-.txtsobre{
-    font-size: 50px;
+    font-size: 3.125rem;
 }
 
-.txtsobre img{
+.txtsobre img {
     position: absolute;
-    left:80px;
-    top:160px;
+    left: 80px;
+    top: 160px;
 }
 
-.txtsobre p{
+.txtsobre p {
     margin: 20px 0;
     color: black;
-    font-size: 20px;
+    font-size: 1.25rem; 
     font-weight: bold;
     max-width: 700px;
 }
 
-.txtsobre button{
-    font-size: 10px;
+.txtsobre button {
+    font-size: 0.625rem; 
     letter-spacing: 2px;
     text-transform: uppercase;
     display: inline-block;
     text-align: center;
     font-weight: bold;
     padding: 0.7em 2em;
-    border: 3px solid color darkcyan;
+    border: 3px solid darkcyan;
     border-radius: 2px;
     position: relative;
     text-decoration: none;
@@ -104,7 +120,7 @@ section.sobre{
     cursor: pointer;
 }
 
-button::before{
+button::before {
     transition: 0.5s all ease;
     position: absolute;
     top: 0;
@@ -115,19 +131,211 @@ button::before{
     content: '';
     background-color: darkcyan;
     z-index: -1;
-
 }
-button:hover, button:focus{
+
+button:hover,
+button:focus {
     color: white;
 }
-button:hover:before, button, button:focus:before{
-    transition: 0.5 all ease;
+
+button:hover::before,
+button:focus::before {
     left: 0;
     right: 0;
     opacity: 1;
 }
-button:active{
+
+button:active {
     transform: scale(0.9);
 }
 
+/* Media Query para telas menores que 1024px (Tablets) */
+@media (max-width: 1024px) {
+    .header {
+        flex-direction: column;
+        padding: 2rem 2%;
+    }
 
+    .logo {
+        width: 100%;
+        max-width: 250px;
+        margin-bottom: 1rem; 
+    }
+
+    .menu {
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu a {
+        display: block;
+        margin: 1rem 0;
+    }
+
+    .extras {
+        width: 400px;
+        height: 320px;
+    }
+
+    .txtsobre {
+        font-size: 2rem;
+    }
+
+    .txtsobre img {
+        left: 30px;
+        top: 80px;
+    }
+
+    .txtsobre p {
+        font-size: 1rem; 
+        max-width: 100%;
+    }
+
+    .txtsobre button {
+        font-size: 0.75rem; 
+        padding: 0.6em 1.5em;
+    }
+
+    .socialmidia {
+        right: 1rem;
+    }
+
+    /* Esconde as imagens em telas menores */
+    .txtsobre img {
+        display: none;
+    }
+
+    /* Esconde o elemento extras em telas menores */
+    .extras {
+        display: none;
+    }
+}
+
+/* Media Query para telas menores que 768px (Celulares pequenos) */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        padding: 1.5rem 2%;
+    }
+
+    .logo {
+        width: 100%;
+        max-width: 200px;
+        margin-bottom: 1rem;
+    }
+
+    .menu {
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu a {
+        display: block;
+        margin: 1rem 0;
+    }
+
+    section.sobre {
+        padding: 2rem;
+    }
+
+    .extras {
+        width: 350px;
+        height: 280px;
+    }
+
+    .txtsobre {
+        font-size: 1.75rem; 
+    }
+
+    .txtsobre img {
+        left: 20px;
+        top: 60px;
+    }
+
+    .txtsobre p {
+        font-size: 0.875rem; 
+    }
+
+    .txtsobre button {
+        font-size: 0.875rem; 
+        padding: 0.6em 1.4em;
+    }
+
+    .socialmidia {
+        right: 1rem;
+    }
+
+    /* Esconde as imagens em telas menores */
+    .txtsobre img {
+        display: none;
+    }
+
+    /* Esconde o elemento extras em telas menores */
+    .extras {
+        display: none;
+    }
+}
+
+/* Media Query para telas menores que 480px (Celulares) */
+@media (max-width: 480px) {
+    .header {
+        padding: 1rem 2%;
+    }
+
+    .logo {
+        width: 100%;
+        max-width: 150px;
+        margin-bottom: 1rem;
+    }
+
+    .menu {
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu a {
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    section.sobre {
+        padding: 1rem;
+    }
+
+    .extras {
+        width: 280px;
+        height: 220px;
+    }
+
+    .txtsobre {
+        font-size: 1.5rem; 
+    }
+
+    .txtsobre img {
+        left: 10px;
+        top: 30px;
+    }
+
+    .txtsobre p {
+        font-size: 0.75rem; 
+    }
+
+    .txtsobre button {
+        font-size: 0.875rem; 
+        padding: 0.5em 1.2em;
+    }
+
+    .socialmidia {
+        right: 1rem;
+    }
+
+    /* Esconde as imagens em telas menores */
+    .txtsobre img {
+        display: none;
+    }
+
+    /* Esconde o elemento extras em telas menores */
+    .extras {
+        display: none;
+    }
+}
